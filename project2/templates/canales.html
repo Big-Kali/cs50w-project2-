@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/static/https _code.jquery.com_jquery-3.6.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/javascript"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+    <title>Canales</title>
+  </head>
+  <body>
+    <div id="add-canales">{{canaleta['name']}}</div>
+
+    <div id="listas-mensajes">
+      {% for Canales in canaleta['mensaje'] %}
+      <h4>{{Canales['name']}}</h4>
+      <p id="delete">{{Canales['text']}}</p>
+      {% endfor %}
+    </div>
+    <div id="box_Canal">
+      <form id="evento_submit" data-canal="{{canaleta['name']}}">
+        <input type="text" name="canal" id="canal" minlength="4" required />
+      </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.js"></script>
+    <script type="text/javascript" src="/static/eventos.js"></script>
+  </body>
+</html>

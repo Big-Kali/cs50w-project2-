@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/static/https _code.jquery.com_jquery-3.6.0.min.js"></script>
+    <title>Super-slacke</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename ='css/style.css')}}"
+    />
+    <!---
+    <style media="screen">
+      #name-box {
+        height: 350px;
+        width: 400px;
+        background: rgb(223, 215, 215);
+      }
+      #nombre {
+        margin-top: 15px;
+      }
+    </style>
+  --></head>
+  <body>
+    <h2 class="border">Slack-pro</h2>
+    <h2 class="wave">Slack-pro</h2>
+
+    <div id="name-box">
+      <h4>Este es tu nombre de usuario</h4>
+      <h4>Crea tu canal para navegar</h4>
+      <h1 id="color">{{get_nombre}}</h1>
+
+      <form id="users">
+        <input
+          type="text"
+          name="nickname"
+          placeholder="users"
+          minlength="4"
+          required
+        />
+        <button id="enviar-user">login user</button>
+      </form>
+    </div>
+
+    <div id="canales-box"></div>
+
+    <form id="private-canal-form">
+      <input
+        type="text"
+        name="canal"
+        placeholder="canal-private"
+        minlength="4"
+        required
+      />
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.js"></script>
+    <script src="{{url_for('static', filename='index.js')}}"></script>
+  </body>
+</html>
